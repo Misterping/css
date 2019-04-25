@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算器</title>
+		<style type="text/css">
+			*{
+			   padding: 0px;
+			   margin:0px ;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			body{
+				background-color:rgb(217, 175, 230);
+			}
+			#box{
+				width: 300px;
+				height: 460px;
+				background-color: black;
+				border-radius:10px 10px 10px 10px ;
+			}
+			#content{
+				width:100% ;
+				height:160px ;
+				border-radius:10px 10px 0px 0px ;
+				background-color: white;
+				border: solid 15px black;
+				box-sizing: border-box;
+			}
+			#answer{
+				width:264px ;
+				height:124px;
+				background-color: white;
+				display: inline-block;
+				box-sizing: content-box;
+				border: 3px solid white;
+				border-radius:15px;
+			}
+			#box table{
+				width:300px;
+				height:300px ;
+				background-color:black;
+				border-radius: 0px 0px 20px 20px;
+				display: flex;
+				box-sizing: border-box;
+				justify-content:center;
+				align-items: center;
+				
+			}
+			tr{
+				width: 300px;
+				height: 45px;
+				box-sizing: content-box;
+				}
+			td{
+				width:45px ;
+				height:45px;
+				border-radius: 50%;
+				text-align: center;
+				font-size: 20px;
+				color: white;
+				border: 1px solid gray;
+			}
+
+			td:active{
+             font-size: 30px;
+			 font-weight: 500px;
+			 box-shadow: 2px 2px 1px 1px gray;
+			 background-color: tomato;
+
+			}
+			#one{
+				border-radius:30px;
+				background-color:black ;
+			}
+			
+			[target]{
+				background-color: orange !important;
+			}
+			[id]{
+				background-color:darkgray;
+			}
+			
+
+			</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="content">
+				<div id="answer"></div>
+					
+			</div>
+			<table border="0" cellspacing="10" cellpadding="10">
+				<tr>
+					<td id="ac" >AC</td>
+					<td id="del">Del</td>
+					<td id="percent" data-value='%' >%</td>
+					<td target="1" data-value="/">÷</td>
+				</tr>
+				<tr>
+					<td data-value="7">7</td>
+					<td data-value="8">8</td>
+					<td data-value="9">9</td>
+					<td target="1" data-value="*">×</td>
+				</tr>
+				<tr>
+					<td data-value="4">4</td>
+					<td data-value="5">5</td>
+					<td data-value="6">6</td>
+					<td target="1" data-value="+">＋</td>
+				</tr>
+				<tr>
+					<td data-value="1">1</td>
+					<td data-value="2">2</td>
+					<td data-value="3">3</td>
+					<td target="1" data-value="-">－</td>
+				</tr>
+				<tr>
+					<td  colspan="2" id="one" data-value='0'>0</td>
+					<td   data-value=".">.</td>
+					<td  target="1" data-value="=">=</td>
+				</tr>
+			</table>
+		</div>
+
+
+	
+		<script type="text/javascript">
+			var percent=document.getElementById('percent');
+			var ac=document.getElementById('ac');
+			var del=document.getElementById('del');
+		    var td=document.getElementsByTagName('td');
+		    var answer=document.getElementById('answer');
+		    var str='';
+		    var str1='';
+		    for(var i=0;i<td.length;i++)
+		    {
+//		    	这里td[i].getAttribute('data-value')表示不为空
+		    	if(td[i].getAttribute('data-value')){
+		    		
+		    	td[i].addEventListener('click',function(){
+		    	var newstr=this.getAttribute('data-value');
+		    	// console.log(newstr);
+		   
+		    		if(newstr=="=")
+		    		{
+//		    			清空屏幕里面的
+		    			answer.innerHTML='';  
+		    			str=eval(str); //这里的eval()功能是计算字符串里面的值；
+		    		}
+                    else{
+                    	str+=newstr;
+                    }
+                  
+                    answer.innerHTML=str;
+                   console.log(str);
+              })
+		    	
+		    	}
+			}
+      	ac.addEventListener('click',function(){	
+      		str='';
+            answer.innerHTML='';
+      	})
+      	
+      	
+      	del.addEventListener('click',function(){
+      		var datastr='';
+      	for(var j=0;j<str.length-1;j++)
+      	{
+      		datastr+=str[j];
+      	}
+//    	这里这只str的目的就是,如果再来一次触发实践,接着 进行,如果没有str,则只有一次机会
+      	str=datastr;
+       answer.innerHTML=str;
+      	})
+      		    	
+		percent.addEventListener('click',function(){
+			var data=parseInt(str)/100;
+			answer.innerHTML=data;
+			     str='';
+		})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font_dx3dkapeoymsra4i/iconfont.css" />
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.site-topbar {
+				width: 100%;
+				height: 40px;
+				background-color: rgb(51, 51, 51);
+				min-width: 1226px;
+			}
+			
+			.site-topbar .container1 {
+				width: 1226px;
+				height: 40px;
+				margin: 0px auto;
+				position: relative;
+			}
+			
+			.site-topbar .container1 .topbar-nav {
+				width: 380.047px;
+				height: 40px;
+				line-height: 40px;
+				display: inline-block;
+			}
+			
+			.site-topbar .container1 .topbar-nav a {
+				color: rgb(176, 176, 176);
+				font-size: 12px;
+				font-weight: 400;
+				text-decoration: none;
+				text-align: center;
+				line-height: 40px;
+				position: relative;
+				margin: 0px;
+				margin-left: 2.5px;
+				margin-right: 6px;
+			}
+			
+			.site-topbar .container1 .topbar-nav a:after {
+				content: "|";
+				font-size: 12px;
+				line-height: 40px;
+				position: absolute;
+				right: -10px;
+				color: rgb(66, 66, 66);
+			}
+			
+			.site-topbar .container1 .topbar-nav a:last-child:after {
+				content: "";
+			}
+			
+			.site-topbar .container1 .topbar-info {
+				width: 142.469px;
+				height: 40px;
+				float: right;
+				line-height: 40px;
+			}
+			
+			.site-topbar .container1 .topbar-info .link {
+				width: 24px;
+				height: 40px;
+				padding: 0px 5px;
+				text-decoration: none;
+				font-size: 10px;
+				color: rgb(176, 176, 176);
+				display: inline-block;
+				line-height: 40px;
+			}
+			
+			.site-topbar .container1 .topbar-info .set {
+				width: 0.324px;
+				height: 40px;
+				margin: 0px;
+				font-size: 10px;
+				border: none;
+				padding: 0px;
+				line-height: 40px;
+				color: rgb(66, 66, 66);
+				display: inline-block;
+			}
+			
+			.site-topbar .container1 .topbar-info .message {
+				width: 48px;
+				height: 40px;
+				box-sizing: content-box;
+				padding: 0px 6px;
+				line-height: 40px;
+				/*display:inline-block;*/
+				font-size: 12px;
+			}
+			
+			.site-topbar .container1 .topbar-info .message a {
+				color: rgb(176, 176, 176);
+				text-decoration: none;
+			}
+			
+			.site-topbar .container1 .topbar-info .message a:hover {
+				color: white;
+				font-weight: 500;
+			}
+			
+			.site-topbar .container1 .shopping-car {
+				width: 120px;
+				height: 40px;
+				margin-left: 15px;
+				float: right;
+				line-height: 40px;
+				background-color: rgb(66, 66, 66);
+				text-align: center;
+				position: relative;
+			}
+
+			.site-topbar .container1 .shopping-car .shopping-car-world {
+				width: 120px;
+				height: 40px;
+				color: #b0b0b0;
+				text-decoration: none;
+				font-size: 12px;
+				line-height: 40px;
+			}
+			/*伪类的表示*/ 
+			.site-topbar .container1 a:hover{
+		        color:white;
+		        font-weight: 500;
+	        }
+			
+			.site-topbar .container1 .link:hover {
+				color: white;
+				font-weight: 500;
+			}
+			/*购物车使用伪类*/
+			.site-topbar .container1 .shopping-car:hover .shopping-car-world {
+				color: #FF6700;
+			}
+		    .site-topbar .container1 .shopping-car:hover{
+			background-color: white;
+		    }	
+			
+			.site-topbar .container1 .shopping-car:hover .cart-meun {
+				height: 98px;
+				color: rgb(66, 66, 66);
+			}
+			
+			.site-topbar .container1 .shopping-car .cart-meun {
+				width: 316px;
+				height: 98px;
+				position: absolute;
+				right: 0px;
+				top: 40px;
+				height: 0px;
+				font-size: 12px;
+				line-height: 98px;
+				box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px 0px;
+				transform: all .3s);
+				overflow: hidden;
+			}
+			
+			
+			
+			
+			
+			/*小米导航条*/
+			 ul{
+		  	width: 100%;
+		  	height: 400px;
+		  	margin: 100px auto;
+		  	list-style: none;
+		  }
+		  li{
+		  	width: 249px;
+		  	height: 400px;
+		  	margin-left: 70px;
+		  	background-color:white;
+		  	float:left;
+		  	overflow: hidden;
+		  	/*x轴的偏移,y轴的偏移,和模糊度*/
+		  	box-shadow:0px 0px 10px rgba(0,0,0,.2);
+		  	transition: .3s linear;
+		  	cursor: pointer;
+		  }
+		  li:hover{
+		  	transform: translateY(-8px);
+		  	box-shadow:0px 10px 15px rgb(0,0,.7);
+		  }
+		  li:hover .display{
+		  	transform: translateY(-80px);
+		  	background-color: red;
+		  }
+		  .red{
+		  	width: 80px;
+		  	height:30px;
+		  	font-size: 16px;
+		  	background-color:red;
+		  	margin: 0px auto;
+		  	color: white;
+		  	line-height: 30px;
+		  	text-align: center;
+		  }
+		  .img{
+		  	width: 100%;
+		  	height: 200px;
+		  	margin-top:30px;
+		  }
+		  .text{
+		  	height: 130px;
+		  	width: 100%;
+		  	text-align: center;
+		  	margin-top: 6px;
+		  }
+		  .span1{
+		  	height: 25px;
+		  	width: 100%;
+		  	font-size:18px;
+		  	display: inline-block;
+		  	text-align:center;
+		  	line-height: 25px;
+
+		  }
+		  .p1{
+		  	font-size: 12px;
+		  	text-align: center;
+		  	color: rgba(0,0,0,0.4);
+		  }
+		  .p2{
+		  	font-size:12px ;
+		  	text-align: center;
+		  	color: black;
+		  }
+		  .span2{
+		  	display:inline-block ;
+		  	margin-top: 10px;
+		  	margin-bottom:15px;
+		  	width:100% ;
+		  	height: 15px;
+		  	text-align: center;
+		  	color: red;
+		  	font-size: 14px;
+		  }
+		  del{
+		  	color: rgba(0,0,0,0.5);
+		  }
+		  .display{
+		  	height: 80px;
+		  	width: 100%;
+		  	padding: 10px 15px;
+		  	background-size:border-box;
+		  	transition: .3s linear;
+		  }
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="site-topbar">
+			<div class="container1">
+
+				<div class="topbar-nav">
+					<a href="" class="item-left">小米商城</a>
+					<a href="" class="item-left">MIUI</a>
+					<a href="" class="item-left">loT</a>
+					<a href="" class="item-left">云服务 </a>
+					<a href="" class="item-left">水滴</a>
+					<a href="" class="item-left">金融</a>
+					<a href="" class="item-left">有品</a>
+					<a href="" class="item-left">Select Region</a>
+				</div>
+				<div class="shopping-car">
+					<a href="" class="shopping-car-world">
+						<i class="iconfont icon-gouwuchekong"></i> 购物车</a>
+					<div class="cart-meun">
+						购物车中还没有商品,赶紧选购吧!
+					</div>
+				</div>
+				<div class="topbar-info">
+					<a href="" class="link">登陆</a>
+					<span class="set">|</span>
+					<a href="" class="link">注册</a>
+					<span class="set">|</span>
+					<span class="message">
+					<a href="">信息通知</a>
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<!--小米导航条-->
+		<ul>
+			<li>
+				<div class="red">享95折</div>
+				<img class="img" src="css/8f4ed2636df22888235f6fdfd8d3232c.jpg" alt="小米笔记本电脑" />
+				<div class="text">
+					<span class="span1">小米笔记本note8 12.6</span>
+					<p class="p1">3月~6月份直降600元</p>
+					<span class="span2">￥2600<del>￥2000元</del></span>
+				</div>
+				<div class="display">
+				    <p class="p2">国产特殊的小米笔记本</p>
+				</div>
+			</li>
+			<li>
+				<div class="red">享83折</div>
+				<img class="img" src="img/e3c8f48d3d9ca478a70917ec33bbb608.jpg" alt="小米笔记本电脑" />
+				<div class="text">
+					<span class="span1">小米尊贵版 12.6</span>
+					<p class="p1">3月~6月份直降500元</p>
+					<span class="span2">￥1500<del>￥1000元</del></span>
+				</div>
+				<div class="display">
+				    <p class="p2">用笔记本，就用小米</p>
+				</div>
+			</li>
+			<li>
+				<div class="red">享5折</div>
+				<img class="img" src="img/97a7fa4f8b0ce8abedbffd9fd490b306.jpg" alt="小米笔记本电脑" />
+				<div class="text">
+					<span class="span1">小米笔记本2 12.6</span>
+					<p class="p1">3月~6月份直降500元</p>
+					<span class="span2">￥2300<del>￥2800元</del></span>
+				</div>
+				<div class="display">
+				    <p class="p2">强烈推荐联想笔记本</p>
+				</div>
+			</li>
+			<li>
+				<div class="red">享56折</div>
+				<img class="img" src="img/8f4ed2636df22888235f6fdfd8d3232c.jpg" alt="小米笔记本电脑" />
+				<div class="text">
+					<span class="span1">小米笔记本5s 12.6</span>
+					<p class="p1">3月~6月份直降300元</p>
+					<span class="span2">￥1600<del>￥1900元</del></span>
+				</div>
+				<div class="display">
+				    <p class="p2">本台不售小米</p>
+				</div>
+			</li>
+		</ul>
+		
+		
+		
+	</body>
+</html>

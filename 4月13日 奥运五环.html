@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.my-photo {
+	width: 400px;
+	height: 700px;
+	margin: 100px 300px;
+}
+body{
+	background-color: coral;
+	/*linear表示匀速,infinite表示无限播放*/
+	animation:body1 10s linear 2s infinite;
+}
+@keyframes body1{
+	0%{
+		background-color:royalblue; 
+	}
+	50%{
+		background-color:chartreuse; 
+	}
+	100%{
+		background-color:darkorange; 
+	}
+}
+.my-photo .box {
+	width: 700px;
+	height: 400px;
+}
+
+.my-photo .box .container {
+	width: 700px;
+	height: 400px;
+	box-sizing: border-box;
+	/*变换的样式3D的*/
+	transform-style: preserve-3d;
+	/*transform: rotateY(0deg);*/
+	animation:container1 3s linear 1s infinite;
+}
+@keyframes container1{
+	from{ transform:rotateX(0deg);}
+	to{transform:rotateX(360deg);}
+}
+
+
+ul {
+	/*去掉小圆点*/
+	list-style: none;
+}
+
+li {
+	/*em是单位的相对大小*/
+	height: 12em;
+	width: 12em;
+	border: solid 1.4em white;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0em;
+	left: 0em;
+	border-radius: 6em;
+	transform: translateZ(0px);
+}
+
+li.blue {
+	top: 0em;
+	left: 0em;
+	border-color: blue;
+}
+
+li.blue.new {
+	transform: translateZ(20px);
+	border-color: transparent blue transparent transparent;
+}
+
+li.yellow {
+	top: 5.7em;
+	left: 6.8em;
+	border-color: yellow;
+}
+
+li.yellow.new {
+	transform: translateZ(18px);
+	border-color: yellow transparent transparent transparent;
+}
+
+li.black {
+	top: 0em;
+	left: 13.6em;
+	border-color: black;
+}
+
+li.green {
+	top: 5.7em;
+	left: 20.4em;
+	border-color: green;
+	transform: translateZ(-10px);
+}
+
+li.green.new {
+	transform: translateZ(10PX);
+	border-color: transparent green green green;
+}
+
+li.red {
+	top: 0em;
+	left: 27.2em;
+	border-color: red;
+	transform: translateZ(-20px);
+}
+
+li.red.new {
+	transform: translateZ(12px);
+	border-color: transparent transparent transparent red;
+}</style>
+	</head>
+	<body>
+		<div class="my-photo">
+			<div class="box">
+				<div class="container">
+				<ul>
+					<li class="blue"></li>
+					<li class="blue new"></li>
+			        <li class="yellow"></li>
+			        <li class="yellow new"></li>
+			        <li class="black"></li>
+			        <li class="green"></li>
+			        <li class="green new"></li>
+			        <li class="red"></li>
+			        <li class="red new"></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

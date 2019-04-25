@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时钟</title>
+    <style>
+        body {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+        }
+
+        .wrap {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(75, 177, 81);
+            border-radius: 50%;
+            position: relative;
+            margin: 30px auto;
+
+        }
+
+        .wrap .num-wrap {
+            width: 500px;
+            height: 500px;
+        }
+
+        .wrap .num-wrap .num {
+            width: 50px;
+            height: 50px;
+            display: block;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 225px;
+            top: 225px;
+        }
+
+        .wrap .pointer-wrap {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap .pointer-wrap #seconds {
+            width: 6px;
+            height: 190px;
+            background-color: black;
+            position: absolute;
+            left: 247px;
+            top: 63px;
+            transform-origin: 3px 187px;
+            transform: rotate(10deg);
+            border-radius: 49%;
+
+        }
+
+        #min {
+            width: 6px;
+            height: 160px;
+            background-color: black;
+            position: absolute;
+            left: 247px;
+            top: 93px;
+            transform-origin: 3px 157px;
+            border-radius: 45%;
+        }
+
+        #h {
+            width: 12px;
+            height: 120px;
+            background-color: black;
+            position: absolute;
+            left: 244px;
+            top: 136px;
+            transform-origin: 6px 114px;
+            border-radius: 100%;
+        }
+        .num-wrap span:nth-child(3n+1){
+            color: brown;
+            font-size: 30px;
+            font-weight: 600;
+                   }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="num-wrap">
+            <span class="num">12</span>
+            <span class="num">1</span>
+            <span class="num">2</span>
+            <span class="num">3</span>
+            <span class="num">4</span>
+            <span class="num">5</span>
+            <span class="num">6</span>
+            <span class="num">7</span>
+            <span class="num">8</span>
+            <span class="num">9</span>
+            <span class="num">10</span>
+            <span class="num">11</span>
+        </div>
+        <div class="pointer-wrap">
+            <div id="seconds"></div>
+            <div id="min"></div>
+            <div id="h"></div>
+        </div>
+    </div>
+    <script>
+
+        var r = 230;
+        var nums = document.getElementsByClassName('num')
+        for (var i = 0; i < nums.length; i++) {
+            var x = 0;
+            var y = 0;
+            y = -r * Math.cos(i * Math.PI / 6);
+            x = r * Math.sin(i * Math.PI / 6); //注意：这里的是弧度制的 要转换成相应的角度来计算
+            nums[i].style.transform = 'translateY(' + y + 'px)' + ' translateX(' + x + 'px)';
+        }
+
+        var sPonter = document.getElementById('seconds');
+        var mPointer = document.getElementById("min");
+        var hPointer = document.getElementById("h");
+
+        var setPointer = function () {
+            var now = new Date()
+            var h = now.getHours()
+            var m = now.getMinutes()
+            var s = now.getSeconds()
+
+            var sdu = s / 60 * 360;
+            var mdu = m / 60 * 360 + s / 60 * 360 / 60 - 1;
+            var hdu = (h - 12) / 12 * 360 + m / 60 * 360 / 12;
+            sPonter.style.transform = 'rotate(' + sdu + 'deg)';
+            mPointer.style.transform = 'rotate(' + mdu + 'deg)';
+            hPointer.style.transform = 'rotate(' + hdu + 'deg)';
+        }
+        setInterval(setPointer, 1000);
+
+
+ //计算针旋转中心的位置：
+        // var getPosition=function(width,height){
+        // var left =250-width/2
+        // var top=250-(height-width/2)
+        // var x=width/2
+        // var y=height- width/2;
+        // console.log(left,top,x,y)
+
+        // }
+    </script>
+</body>
+
+</html>

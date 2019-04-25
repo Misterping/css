@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的小米1</title>
+		<style type="text/css">
+			.wrap {
+				width: 1226px;
+				height: 460px;
+				background-color: white;
+			}
+			
+			.wrap .left-mune {
+				width: 234px;
+				height: 460px;
+				box-sizing: border-box;
+				padding: 0px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				margin: 0px;
+				background-color: rgba(0, 0, 0, 0.6);
+				list-style: none;
+				position: relative;
+			}
+			
+			.wrap .left-mune .left-mune-item {
+				width: 234px;
+				height: 42px;
+			}
+			
+			.wrap .left-mune .left-mune-item a {
+				width: 204px;
+				height: 42px;
+				padding: 0px;
+				padding-left: 30px;
+				font-size: 15px;
+				color: rgb(225, 225, 225);
+				text-decoration: none;
+				display: block;
+				line-height: 42px;
+				position: relative;
+			}
+			
+			.wrap .left-mune .left-mune-item a .point {
+				position: absolute;
+				top: 0px;
+				right: 20px;
+			}
+			
+			.wrap .left-mune .left-mune-item .children {
+				width: 992px;
+				height: 460px;
+				background-color: red;
+				display: none;
+				position: absolute;
+				top: 0px;
+				left: 234px;
+			}
+			
+			.wrap .left-mune .left-mune-item .children .pic {
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.wrap .left-mune .left-mune-item:hover {
+				background-color: #ff6700;
+			}
+			
+			.wrap .left-mune .left-mune-item:hover .children {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<ul class="left-mune">
+				<li class="left-mune-item">
+					<div class="children">
+						<img class="pic" src="img/timg.jpg" / alt="图裂了">
+					</div>
+					<a href="">手机 电话卡<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"><img class="pic" src="img/20171122191630_ff8fef.jpg" / alt="图裂了"></div>
+					<a href="">笔记本<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"> <img class="pic" src="img/80_8055tv.jpg" / alt="图裂了"></div>
+					<a href="">电视 盒子<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">智能 家电<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">健康 家居<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">出行 儿童<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">路由器 手机配件<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">移动电源 插线板<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">耳机 音响<span class="point">></span></a>
+				</li>
+				<li class="left-mune-item">
+					<div class="children"></div>
+					<a href="">生活 米兔<span class="point">></span></a>
+				</li>
+			</ul>
+		</div>
+		<!--本次得到的结论是position只能向上一级寻找有position的，无论在style中是如何的写都得遵守。-->
+	</body>
+
+</html>

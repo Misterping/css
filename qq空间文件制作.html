@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的QQ空间</title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			html {
+				height: 100%;
+				/*width: 100%;*/
+			}
+			
+			body {
+				height: 100%;
+				background-color: gray;
+				background-image: url(img/20171123181522_c48800.jpg);
+				background-size: 100% auto;
+				/*background-repeat:initial;*/
+			}
+			
+			.contenter {
+				width: 880px;
+				margin: 0px auto;
+				position: relative;
+				top: 95px;
+			}
+			
+			.wrap {
+				width: 414px;
+				height: 312px;
+				border: solid rgb(238, 238, 238) 2px;
+				background-color: white;
+				margin: 0px auto;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			
+			.wrap .title {
+				margin-top: 6px;
+				margin-bottom: 16px;
+				font-size: 20px;
+				color: rgb(51, 51, 51);
+				/*align为对齐属性*/
+				text-align: center;
+			}
+			
+			.wrap .info {
+				color: rgb(102, 102, 102);
+				text-align: center;
+				margin-bottom: 36px;
+			}
+			
+			.wrap .info a:hover {
+				text-decoration: underline;
+			}
+			
+			.wrap .info a {
+				color: rgb(52, 129, 207);
+				text-decoration: none;
+			}
+			
+			#form {
+				width: 272px;
+				height: 150px;
+				margin: 0px auto;
+				text-align: center;
+			}
+			
+			.wrap #form .input {
+				width: 268px;
+				height: 38px;
+				padding: 10px;
+				padding-right: 0px;
+				box-sizing: border-box;
+				margin-bottom: 17px;
+				border-radius: 2px;
+				border: solid rgb(214, 214, 214) 1px;
+			}
+			/*伪类的使用*/
+			
+			.wrap #form .input:active {
+				border: solid rgb(225, 225, 225) 0.6px;
+			}
+			
+			.wrap #form #btn {
+				width: 268px;
+				height: 37px;
+				padding: 1px 7px 2px 7px;
+				border-radius: 3px;
+				/*以内容为基准*/
+				 box-sizing:content-box;
+				border: none;
+				background-color: rgb(136, 210, 48);
+				color: white;
+				font-size: 17px;
+				margin: 0px;
+			}
+			
+			.wrap #form #btn:hover {
+				text-shadow: 2px 2px 2px white;
+			}
+			
+			.wrap .butt {
+				height: 16px;
+				width: 414px;
+				margin-bottom: 8px;
+				color: rgb(102, 102, 102);
+				/*对齐方式：右*/
+				text-align: right;
+				margin-bottom: 8px;
+				display: block;
+				border: 0px;
+				/*字重12px*/
+				font-size: 12px;
+				position: absolute;
+				top: 288px;
+				right: 10px;
+				bottom: 8px;
+				left: -10px;
+			}
+			
+			.butt .link {
+				color: rgb(102, 102, 102);
+				text-decoration: none;
+				letter-spacing: 0.4px;
+			}
+			
+			.wrap .butt .doto {
+				margin: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="contenter">
+			<div class="logo">
+				<img src="img/qzone-login-logo-dark.32.png" />
+			</div>
+			<div class="wrap">
+				<div class="title">
+					账号密码登录
+				</div>
+				<div class="info">
+					推荐使用
+					<a href="">快速安全登录</a>，防止盗号。
+				</div>
+				<form id="form" action="" method="post">
+					<input class="input" type="text" placeholder="支持QQ号/邮箱/手机号登录" />
+					<input class="input" type="text" placeholder="密码" />
+					<button type="button" id="btn">登 录</button>
+				</form>
+
+				<div class="butt">
+					<a href="" class="link" id="forgetmm">忘了密码?</a>
+					<span class="doto">|</span>
+					<a href="" class="link" target="_blank">注册新账号</a>
+					<span class="doto">|</span>
+					<a href="" class="link" target="">意见反馈</a>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

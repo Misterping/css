@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>线球联动</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #can {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        var canvas = document.getElementById('can')
+        var ctx = canvas.getContext('2d')
+        var cw = canvas.width = window.innerWidth;
+        var ch = canvas.height = window.innerHeight;
+        //console.log(cw,ch)
+        var speedX = 4;
+        var speedY = 3;
+        var y = 200;
+        var x = 300;
+
+        var init = function () {
+            this.x = Math.random() * cw;
+            this.y = Math.random() * ch;
+            this.vx = parseInt(Math.random() * 2 + 2) >= 3 ? -2 : 2;
+            this.vy = parseInt(Math.random() * 2 + 2) >= 3 ? -2 : 2;
+            this.r = 5;
+        }
+        var arr = [];
+        for (var i = 0; i < 80; i++) {
+            arr.push(new init)
+        }
+
+        var drawLine = function () {
+            for (var i = 0; i < arr.length; i++) {
+                var now1 = arr[i];
+                for (var j = 0; j < arr.length; j++) {
+                    var now2 = arr[j];
+                    if (Math.sqrt(Math.pow(now1.x - now2.x, 2) + Math.pow(now1.y - now2.y, 2)) <= 100) {
+                        ctx.beginPath()
+                        ctx.moveTo(now1.x, now1.y)
+                        ctx.lineTo(now2.x, now2.y)
+                        ctx.strokeStyle = "#426666";
+                        ctx.stroke()
+                        ctx.closePath()
+                    }
+                }
+            }
+      }
+        //产生一个随机颜色
+
+        setInterval(function () {
+            //改动这里的rgba可以看到线球联动的效果
+            ctx.fillStyle = 'rgba(0,0,0,1)'
+            ctx.fillRect(0, 0, cw, ch)
+            for (var i = 0; i < arr.length; i++) {
+                var now = arr[i];
+                if (now.x >= cw || now.x <= 0) {
+                    now.vx = -now.vx;
+                    now.vy = now.vy;
+                }
+                if (now.y >= ch || now.y <= 0) {
+                    now.vy = -now.vy;
+                    now.vx = now.vx;
+                }
+                ctx.beginPath()
+                ctx.arc(now.x, now.y, now.r, 0, Math.PI * 2)
+                ctx.fillStyle = 'blue'
+                ctx.fill()
+                now.y += now.vy;
+                now.x += now.vx;
+                ctx.closePath()
+            }
+            drawLine()
+        }, 1000 / 60);
+
+    </script>
+</body>
+
+</html>

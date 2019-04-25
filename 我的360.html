@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>360安全导航栏</title>
+		<style type="text/css">
+			.box {
+				width: 607px;
+			}
+			
+			.box .head {
+				height: 27px;
+				position: relative;
+			}
+			
+			.box .head #green-line {
+				/*利用绝对定位来调*/
+				position: absolute;
+				display: inline-block;
+				width: 2px;
+				background-color: #23AC38;
+				height: 18px;
+				top: 4.5px;
+				left: 0px;
+			}
+			
+			.box .head a {
+				line-height: 27px;
+				color: #23ac38;
+				text-decoration: none;
+				padding-left: 10px;
+				font-size: 18px;
+			}
+			
+			.box .body {
+				width: 100%;
+				height: 564px;
+				box-sizing: border-box;
+				border: solid rgb(229, 229, 229) 1px;
+			}
+			
+			.box .body .item {
+				float: left;
+				width: 303px;
+				height: 141px;
+				box-sizing: border-box;
+				border: solid rgb(229, 229, 229) 1px;
+				border-top: none;
+				border-right: none;
+				margin-left: -1px;
+				padding: 24px 0px;
+			}
+			
+			.box .body .item .pic {
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				margin: 16px 20px 0px 30px;
+				text-align: center;
+			}
+			/*单独对图片的大小设置为60px.60px*/
+			
+			.box .body .item .pic .img1 {
+				width: 60px;
+				height: 60px;
+			}
+			
+			.box .body .item .text {
+				display: inline-block;
+				margin-top: 10px;
+				position: absolute;
+				/*这里也是问题*/
+				/*top:23px;*/
+			}
+			
+			.box .body .item .text .title {
+				font-size: 18px;
+				height: 36px;
+				line-height: 36px;
+			}
+			
+			.box .body .item .text .download .dl-link {
+				display: inline-block;
+				width: 68px;
+				height: 28px;
+				border: solid rgb(229, 229, 229) 1px;
+				text-align: center;
+				line-height: 28px;
+				color: #333;
+				text-decoration: none;
+				font-size: 14px;
+				margin-right: 10px;
+				border-radius: 3px;
+			}
+			
+			.box .body .item .text .download .dl-link:focus {
+				font-size: 17px;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="head">
+				<span id="green-line"></span>
+				<a href="">360安全软件</a>
+			</div>
+			<div class="body">
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/p_weishi.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360安全卫士
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/t01590f3c1d53bc7f60.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							36消毒软件
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/t011ceec1526c9ab8ae.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360安全浏览器
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/logo_56_2.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360急速浏览器
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/t017dd6575227165fc7.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360手机保护卫士
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/t01fa99d878551f2777.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360手机助手
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/t013e0ef1537db56699.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360驱动大叔
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="pic">
+						<img class="img1" src="img/p_FreeAP.png" />
+					</div>
+					<div class="text">
+						<div class="title">
+							360免费wifi
+						</div>
+						<div class="download">
+							<a class="dl-link" href="">下载</a>
+							<a class="dl-link" href="">论坛</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
